@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Facade</title>
+    <!-- <link rel="stylesheet" href="style.css"> -->
+  </head>
+
+  <style>
+    .youtube-container {
+        position: relative;
+        width: 100%; /* or specific width */
+        /* padding-top: 56.25%; */
+        height: 450px;
+    }
+
+    .youtube-placeholder {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: no-repeat center center;
+        background-size: cover;
+        cursor: pointer;
+    }
+
+    .youtube-placeholder img {
+        width: 100%;
+        height: auto;
+    }
+
+    .play-button {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 68px;
+        height: 48px;
+        background: url('https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/YouTube_play_button_icon_%282013%E2%80%932017%29.svg/1024px-YouTube_play_button_icon_%282013%E2%80%932017%29.svg.png') no-repeat;
+        background-size: contain;
+        transform: translate(-50%, -50%);
+    }
+
+    .container {
+        max-width: 90%;
+        width: 800px;
+        display:block;
+        margin: 0 auto;
+    }
+
+    </style>
+  <body>
+    <h1 style="text-align:center;">Test</h1>
+
+    <!-- ID -->
+    <!-- N28ko5m9c1I -->
+
+    <div class="container">
+        <div id="youtube-container" class="youtube-container">
+            <div class="youtube-placeholder" onclick="loadYouTubeVideo()">
+                <img src="https://img.youtube.com/vi/N28ko5m9c1I/maxresdefault.jpg" alt="Video Title" />
+                <div class="play-button"></div>
+            </div>
+        </div>
+    </div>
+
+      <script>
+
+        function loadYouTubeVideo() {
+            var iframe = document.createElement('iframe');
+            
+            // Replace 'YOUR_VIDEO_ID' with your actual YouTube video ID
+            iframe.setAttribute('src', 'https://www.youtube.com/embed/N28ko5m9c1I?autoplay=1');
+            iframe.setAttribute('frameborder', '0');
+            iframe.setAttribute('allowfullscreen', '1');
+            iframe.setAttribute('allow', 'accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture');
+            iframe.style.width = '100%';
+            iframe.style.height = '100%';
+            
+            // Replace the placeholder with the iframe
+            var container = document.getElementById('youtube-container');
+            container.innerHTML = '';
+            container.appendChild(iframe);
+        }
+
+
+      </script>
+   
+  </body>
+</html>
