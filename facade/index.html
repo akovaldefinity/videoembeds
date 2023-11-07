@@ -5,14 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Facade</title>
-    <!-- <link rel="stylesheet" href="style.css"> -->
   </head>
 
   <style>
     .youtube-container {
         position: relative;
-        width: 100%; /* or specific width */
-        /* padding-top: 56.25%; */
+        width: 100%;
         height: 450px;
     }
 
@@ -54,9 +52,6 @@
   <body>
     <h1 style="text-align:center;">Test</h1>
 
-    <!-- ID -->
-    <!-- N28ko5m9c1I -->
-
     <div class="container">
         <div id="youtube-container" class="youtube-container">
             <div class="youtube-placeholder" onclick="loadYouTubeVideo()">
@@ -71,15 +66,13 @@
         function loadYouTubeVideo() {
             var iframe = document.createElement('iframe');
             
-            // Replace 'YOUR_VIDEO_ID' with your actual YouTube video ID
             iframe.setAttribute('src', 'https://www.youtube.com/embed/N28ko5m9c1I?autoplay=1');
             iframe.setAttribute('frameborder', '0');
             iframe.setAttribute('allowfullscreen', '1');
             iframe.setAttribute('allow', 'accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture');
             iframe.style.width = '100%';
             iframe.style.height = '100%';
-            
-            // Replace the placeholder with the iframe
+
             var container = document.getElementById('youtube-container');
             container.innerHTML = '';
             container.appendChild(iframe);
